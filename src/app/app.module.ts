@@ -1,8 +1,12 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
+import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
+import { DataModule } from './data/data.module';
+import { CoreModule } from './core/core.module';
+import { PresentationModule } from './presentation/presentation.module';
+import { UserRepository } from './core/repositories/user.repository';
+import { UserMockRepository } from './data/repository/user-mock-repository/user-mock.repository';
+import { UserWebRepository } from './data/repository/user-web-repository/user-web.repository';
 
 @NgModule({
   declarations: [
@@ -10,9 +14,14 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    DataModule,
+    CoreModule,
+    PresentationModule
   ],
-  providers: [],
+  providers: [
+    // {provide: UserRepository, useClass: UserWebRepository}
+    {provide: UserRepository, useClass: UserMockRepository}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -28,7 +28,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/milligram/dist/milligram.css"
             ],
             "scripts": []
           },
@@ -96,12 +97,16 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/milligram/dist/milligram.css"
             ],
             "scripts": []
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "74e0a9ed-a6e4-444e-94e7-f6122de1da51"
   }
 }

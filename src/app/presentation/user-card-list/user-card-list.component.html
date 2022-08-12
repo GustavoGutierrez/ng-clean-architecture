@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="column-center">
+    <button class="button-outline" (click)="updateUsers()">Load Users</button>
+  </div>
+</div>
+<div class="row">
+  <div class="column">
+    <table>
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Avatar</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Created At</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let user of users; let i = index" (click)="onSelect(user)">
+        <td>{{user.id}}.</td>
+        <td><img [src]="user.avatar" [alt]="user.id" width="50" /></td>
+        <td>{{user.name}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.createdAt | date:'mediumDate'}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
