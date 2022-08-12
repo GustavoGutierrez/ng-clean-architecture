@@ -7,11 +7,11 @@ import { UserModel } from '../domain/user.model';
 @Injectable({
   providedIn: 'root'
 })
-export class GetUserByIdUsecase implements UseCase<number, UserModel> {
+export class GetUserByIdUsecase implements UseCase<string, UserModel> {
 
   constructor(private userRepository: UserRepository) { }
 
-  execute(params: number): Observable<UserModel> {
-    return this.userRepository.getUserById(params);
+  execute(id: string): Observable<UserModel> {
+    return this.userRepository.getUserById(id);
   }
 }

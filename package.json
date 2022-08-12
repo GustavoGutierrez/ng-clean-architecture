@@ -1,6 +1,10 @@
 {
   "name": "ng-clean-architecture",
   "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GustavoGutierrez/ng-clean-architecture"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
