@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
-import { UserRepository } from '../../../core/repositories/user.repository';
-import { UserModel } from '../../../core/domain/user.model';
 import { from, Observable } from 'rxjs';
 import {  filter, map } from 'rxjs/operators';
-import { UserMockEntity } from './user-mock-entity';
-import { UserMockRepositoryMapper } from './user-mock-repository-mapper';
+
+import { UserRepository } from '@core/repositories/user.repository';
+import { UserMockEntity, UserMockRepositoryMapper } from '@repository/user-mock-repository';
 
 @Injectable({
   providedIn: 'root'

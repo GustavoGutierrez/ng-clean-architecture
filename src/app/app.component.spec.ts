@@ -1,22 +1,22 @@
-import { async, TestBed } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { ElephantRepository } from './core/repositories/elephant.repository';
-import { ElephantMockRepository } from './data/repository/elephant-mock-repository/elephant-mock.repository';
-import { ElephantCardListComponent } from './presentation/elephant-card-list/elephant-card-list.component';
+import { UserRepository } from '@core/repositories/user.repository';
+import { UserMockRepository } from '@repository/user-mock-repository';
+import { UserCardListComponent } from '@presentation/user-card-list/user-card-list.component';
 
 describe('AppComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
-        ElephantCardListComponent
+        UserCardListComponent
       ],
       providers: [
-        {provide: ElephantRepository, useClass: ElephantMockRepository}
+        {provide: UserRepository, useClass: UserMockRepository}
       ]
     }).compileComponents();
   });
-  it('should create the app', async(() => {
+  it('should create the app', waitForAsync(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();

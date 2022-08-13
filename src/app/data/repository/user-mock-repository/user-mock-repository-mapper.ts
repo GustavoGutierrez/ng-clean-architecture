@@ -1,6 +1,6 @@
-import { UserModel } from '../../../core/domain/user.model';
-import { Mapper } from '../../../core/base/mapper';
-import { UserMockEntity } from './user-mock-entity';
+import { UserModel } from '@core/domain/user.model';
+import { Mapper } from '@core/base/mapper';
+import { UserMockEntity } from '@repository/user-mock-repository';
 
 export class UserMockRepositoryMapper extends Mapper <UserMockEntity, UserModel> {
   mapFrom(param: UserMockEntity): UserModel {

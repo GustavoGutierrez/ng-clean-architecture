@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { UseCase } from '../base/use-case';
 import { Observable } from 'rxjs';
-import { UserRepository } from '../repositories/user.repository';
-import { UserModel } from '../domain/user.model';
+
+import { UserRepository } from '@core/repositories/user.repository';
+import { UseCase } from '@core/base/use-case';
+import { UserModel } from '@core/domain/user.model';
 
 @Injectable({
   providedIn: 'root'
