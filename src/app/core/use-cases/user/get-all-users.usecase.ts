@@ -11,12 +11,6 @@ import { CleanUsersAction, GetUsersAction } from '@state/user/user.actions';
 })
 export class GetAllUsersUsecase implements UseCase<void, UserModel[]> {
 
-  // constructor(private userRepository: UserRepository) { }
-
-  // execute(params: void): Observable<UserModel> {
-  //   return this.userRepository.getAllUsers();
-  // }
-
   constructor(private store: Store) { }
 
   execute(params: void): Observable<UserModel[]> {

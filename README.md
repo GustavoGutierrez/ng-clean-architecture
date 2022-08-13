@@ -1,11 +1,19 @@
 # Angular Clean Architecture
 
-## Capas del código
+Clean architecture for Angular with state management pattern and best practices
 
-![Layers](https://files.speakerdeck.com/presentations/c9b8896d18574cf785ce91397cfdad9f/slide_20.jpg?6219456)
+## Layers
 
-Este código esta basado en:
+![Layers](./docs/assets/Layers.jpg)
+
+![Layers](./docs/assets/Layer-folders.jpg)
+
+## This code is based on
+
+- Clean architecture on Android \
 https://speakerdeck.com/markomilos/clean-architecture-on-android?slide=9
+- Clean architecture in Frontend \
+https://indiedev.medium.com/clean-architecture-in-frontend-react-redux-typescript-bd108ddd13f7
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.2.
