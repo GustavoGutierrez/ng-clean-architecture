@@ -1,7 +1,7 @@
 import { TestBed, waitForAsync } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { UserRepository } from '@core/repositories/user.repository';
-import { UserMockRepository } from '@repository/user-mock-repository';
+import { UserMockRepository } from '@data/repository/user-mock-repository';
 import { UserCardListComponent } from '@presentation/user-card-list/user-card-list.component';
 
 describe('AppComponent', () => {

@@ -14,4 +14,4 @@ import { HttpClientModule } from '@angular/common/http';
 
   ]
 })
-export class DataModule { }
+export class InfrastructureModule { }

@@ -1,28 +1,31 @@
-import { Component } from '@angular/core';
-import { UserModel } from '../../core/domain/user.model';
-import { GetAllUsersUsecase } from '../../core/usecases/get-all-users.usecase';
+import { Component, OnDestroy } from '@angular/core';
+import { UserModel } from '@core/domain';
+import { GetAllUsersUsecase, SelectUserUsecase } from '@core/use-cases/user';
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-user-card',
   templateUrl: './user-card-list.component.html',
   styleUrls: []
 })
-export class UserCardListComponent {
+export class UserCardListComponent implements OnDestroy {
+  users$: Observable<UserModel[]> | undefined;
+  userSelected$: Observable<UserModel | null> | undefined;
 
-  users: Array<UserModel>;
-
-  constructor(private getAllUsers: GetAllUsersUsecase) {
-    this.users = [];
+  constructor(
+    private getAllUsers: GetAllUsersUsecase,
+    private selectUser: SelectUserUsecase,
+    ) {
   }
 
   updateUsers() {
-    this.users = [];
-    this.getAllUsers.execute().subscribe((user: UserModel) => {
-      this.users.push(user);
-    });
+    this.users$ = this.getAllUsers.execute();
   }
 
   onSelect(user: UserModel) {
-    console.log(user);
+    this.userSelected$ = this.selectUser.execute(user);
+  }
+
+  ngOnDestroy(): void {
   }
 }

@@ -1,6 +1,6 @@
 import { inject, TestBed } from '@angular/core/testing';
 
-import { UserMockEntity, UserMockRepository } from '@repository/user-mock-repository';
+import { UserMockEntity, UserMockRepository } from '@data/repository/user-mock-repository';
 import { toArray } from 'rxjs';
 
 describe('UserRepositoryMockService', () => {
@@ -19,7 +19,7 @@ describe('UserRepositoryMockService', () => {
     .pipe(
       toArray()
     )
-    .subscribe(users => {
+    .subscribe((users: UserMockEntity[]) => {
       expect(users.length).toBe(3);
     }).unsubscribe();
 

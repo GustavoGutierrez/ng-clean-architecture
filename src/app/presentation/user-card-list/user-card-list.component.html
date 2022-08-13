@@ -3,6 +3,16 @@
     <button class="button-outline" (click)="updateUsers()">Load Users</button>
   </div>
 </div>
+
+<div class="row" *ngIf="userSelected$ | async">
+  <div class="column">
+    <h3>User Selected</h3>
+    <pre>
+        {{ userSelected$ | async | json }}
+    </pre>
+  </div>
+</div>
+
 <div class="row">
   <div class="column">
     <table>
@@ -16,7 +26,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let user of users; let i = index" (click)="onSelect(user)">
+      <tr *ngFor="let user of (users$ | async); let i = index" (click)="onSelect(user)">
         <td>{{user.id}}.</td>
         <td><img [src]="user.avatar" [alt]="user.id" width="50" /></td>
         <td>{{user.name}}</td>

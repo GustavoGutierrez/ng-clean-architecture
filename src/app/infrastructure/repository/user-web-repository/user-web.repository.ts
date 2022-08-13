@@ -6,7 +6,7 @@ import { mergeMap, map } from 'rxjs/operators';
 import { environment } from '@environments/environment';
 import { UserRepository } from '@core/repositories/user.repository';
 import { UserModel } from '@core/domain/user.model';
-import { UserWebEntity, UserWebRepositoryMapper } from '@repository/user-web-repository';
+import { UserWebEntity, UserWebRepositoryMapper } from '@data/repository/user-web-repository';
 
 @Injectable({
   providedIn: 'root'

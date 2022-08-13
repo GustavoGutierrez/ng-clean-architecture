@@ -1,6 +1,6 @@
 import { inject, TestBed } from '@angular/core/testing';
 import { UserRepository } from '@core/repositories/user.repository';
-import { UserMockRepository } from '@data/repository/user-mock-repository';
+import { UserMockRepository } from '@repository/user-mock-repository';
 
 import { count } from 'rxjs';
 import { GetAllUsersUsecase } from './get-all-users.usecase';

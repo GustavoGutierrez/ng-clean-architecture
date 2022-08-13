@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  projectName: 'ngCleanArch', // Rename with your project name
   apiUrl: 'https://5dd2cbc26625890014a6e0fc.mockapi.io/api/gustavo'
 };
 
