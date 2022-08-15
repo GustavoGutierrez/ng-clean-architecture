@@ -9,7 +9,7 @@ import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 
 // States of application
 // import { AuthState } from '@state/auth/auth.state';
-import { UserState } from '@state/user/user.state';
+import { UserState } from 'src/app/store/user/user.state';
 
 @NgModule({
   imports: [

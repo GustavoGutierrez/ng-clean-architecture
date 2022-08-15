@@ -1,6 +1,8 @@
 import { inject, TestBed } from '@angular/core/testing';
 import { UserRepository } from '@core/repositories/user.repository';
+import { Store } from '@ngxs/store';
 import { UserMockRepository } from '@repository/user-mock-repository';
+import { StoreModule } from '@state/store.module';
 
 import { count } from 'rxjs';
 import { GetAllUsersUsecase } from './get-all-users.usecase';
@@ -8,9 +10,13 @@ import { GetAllUsersUsecase } from './get-all-users.usecase';
 describe('GetAllUsersUsecase', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
+      imports: [
+        StoreModule
+      ],
       providers: [
         {provide: UserRepository, useClass: UserMockRepository},
-        GetAllUsersUsecase]
+        GetAllUsersUsecase
+      ]
     });
   });
 
@@ -20,11 +26,8 @@ describe('GetAllUsersUsecase', () => {
 
   it('get all users by user case', inject([GetAllUsersUsecase], (service: GetAllUsersUsecase) => {
     service.execute()
-    .pipe(
-      count(user=>true)
-    )
     .subscribe(users => {
-      expect(users).toBe(3);
+      expect(users.length).toBe(3);
     }).unsubscribe();
 
   }));

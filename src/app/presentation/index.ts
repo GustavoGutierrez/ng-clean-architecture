@@ -1,1 +1,1 @@
-export * from '@presentation/user-card-list/user-card-list.component';
+export * from './user/user.module';

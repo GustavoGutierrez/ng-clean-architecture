@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { UserCardListComponent } from './user-card-list/user-card-list.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'user',
-    pathMatch: 'full'
+    component: UserCardListComponent
   },
   {
-    path: 'user',
-    loadChildren: () => import('./presentation/user/user.module').then(m => m.UserModule)
+    path: 'user/:id',
+    component: UserCardListComponent
   }
 ];
 
@@ -17,4 +17,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class UserRoutingModule { }

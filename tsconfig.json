@@ -24,7 +24,7 @@
     ],
     "paths": {
       "@core/*": ["src/app/core/*"],
-      "@state/*": ["src/app/infrastructure/store/*"],
+      "@state/*": ["src/app/store/*"],
       "@infrastructure/*": ["src/app/infrastructure/*"],
       "@repository/*": ["src/app/infrastructure/repository/*"],
       "@presentation/*": ["src/app/presentation/*"],

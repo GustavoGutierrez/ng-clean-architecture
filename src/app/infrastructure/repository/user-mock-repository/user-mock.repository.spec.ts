@@ -1,11 +1,15 @@
 import { inject, TestBed } from '@angular/core/testing';
 
-import { UserMockEntity, UserMockRepository } from '@data/repository/user-mock-repository';
+import { UserMockEntity, UserMockRepository } from '@repository/user-mock-repository';
 import { toArray } from 'rxjs';
 
-describe('UserRepositoryMockService', () => {
+describe('UserMockRepositoryService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
+      declarations: [
+      ],
+      imports: [
+      ],
       providers: [UserMockRepository]
     });
   });
@@ -35,7 +39,7 @@ describe('UserRepositoryMockService', () => {
       "id": "2"
     };
 
-    service.getUserById('2').subscribe(user => {
+    service.getUserById('2').subscribe((user: UserMockEntity) => {
       expect(user.email).toEqual(response.email);
       expect(user.name).toEqual(response.name);
     }).unsubscribe();

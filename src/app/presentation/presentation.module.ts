@@ -1,20 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CoreModule } from '@core/core.module';
-import { UserCardListComponent } from './index';
 import { InfrastructureModule } from '@infrastructure/infrastructure.module';
+import { UserModule } from './user/user.module';
 
 @NgModule({
   imports: [
     CommonModule,
     CoreModule,
-    InfrastructureModule
+    InfrastructureModule,
+    UserModule
   ],
   declarations: [
-    UserCardListComponent
+
   ],
   exports: [
-    UserCardListComponent
+
   ],
   providers: [
   ]
