@@ -6,7 +6,7 @@ Clean architecture for Angular with state management pattern and best practices
 
 ![Layers](./docs/assets/Layers.jpg)
 
-![Layers](./docs/assets/Layer-folders.jpg)
+![Layers](./docs/assets/Layer-folders.png)
 
 ## This code is based on
 
