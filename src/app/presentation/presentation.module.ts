@@ -1,23 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CoreModule } from '@core/core.module';
-import { InfrastructureModule } from '@infrastructure/infrastructure.module';
 import { UserModule } from './user/user.module';
+import { RouterModule } from '@angular/router';
+import { PublicLayoutComponent, ShellLayoutComponent } from './layout';
 
 @NgModule({
   imports: [
+    RouterModule,
     CommonModule,
-    CoreModule,
-    InfrastructureModule,
     UserModule
   ],
-  declarations: [
-
-  ],
   exports: [
-
+    ShellLayoutComponent,
+    PublicLayoutComponent
   ],
-  providers: [
-  ]
+  declarations: [
+    ShellLayoutComponent,
+    PublicLayoutComponent
+  ],
 })
 export class PresentationModule { }

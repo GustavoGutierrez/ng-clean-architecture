@@ -1,7 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { UserModel } from '@core/domain';
 import { GetAllUsersUsecase, SelectUserUsecase } from '@core/use-cases/user';
-import { Observable, Subscription } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-user-card',

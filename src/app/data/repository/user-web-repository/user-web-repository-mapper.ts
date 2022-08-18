@@ -1,9 +1,9 @@
 import { UserModel } from '@core/domain/user.model';
 import { Mapper } from '@core/base/mapper';
-import { UserWebEntity } from '@repository/user-web-repository';
+import { UserEntity } from '@core/entities/user.entity';
 
-export class UserWebRepositoryMapper extends Mapper <UserWebEntity, UserModel> {
-  mapFrom(param: UserWebEntity): UserModel {
+export class UserWebRepositoryMapper extends Mapper <UserEntity, UserModel> {
+  mapFrom(param: UserEntity): UserModel {
     return {
       id: param.id,
       name: param.name,
@@ -13,7 +13,7 @@ export class UserWebRepositoryMapper extends Mapper <UserWebEntity, UserModel> {
     };
   }
 
-  mapTo(param: UserModel): UserWebEntity {
+  mapTo(param: UserModel): UserEntity {
     return {
       id: '0',
       name: param.name,

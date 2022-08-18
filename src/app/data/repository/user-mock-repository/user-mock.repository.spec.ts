@@ -1,6 +1,7 @@
 import { inject, TestBed } from '@angular/core/testing';
+import { UserEntity } from '@core/entities/user.entity';
 
-import { UserMockEntity, UserMockRepository } from '@repository/user-mock-repository';
+import { UserMockRepository } from '@data/repository/user-mock-repository';
 import { toArray } from 'rxjs';
 
 describe('UserMockRepositoryService', () => {
@@ -23,14 +24,14 @@ describe('UserMockRepositoryService', () => {
     .pipe(
       toArray()
     )
-    .subscribe((users: UserMockEntity[]) => {
+    .subscribe((users: UserEntity[]) => {
       expect(users.length).toBe(3);
     }).unsubscribe();
 
   }));
 
   it('must obtain the user', inject([UserMockRepository], (service: UserMockRepository) => {
-    const response: UserMockEntity = {
+    const response: UserEntity = {
       "createdAt": "2022-08-09T20:51:19.571Z",
       "name": "Rene Kautzer",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/151.jpg",
@@ -39,7 +40,7 @@ describe('UserMockRepositoryService', () => {
       "id": "2"
     };
 
-    service.getUserById('2').subscribe((user: UserMockEntity) => {
+    service.getUserById('2').subscribe((user: UserEntity) => {
       expect(user.email).toEqual(response.email);
       expect(user.name).toEqual(response.name);
     }).unsubscribe();

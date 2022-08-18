@@ -3,16 +3,16 @@ import { from, Observable } from 'rxjs';
 import {  filter, map } from 'rxjs/operators';
 
 import { UserRepository } from '@core/repositories/user.repository';
-import { UserMockEntity, UserMockRepositoryMapper } from '@repository/user-mock-repository';
+import { UserMockRepositoryMapper } from '@data/repository/user-mock-repository';
+import { UserEntity } from '@core/entities/user.entity';
+import { UserModel } from '@core/domain';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class UserMockRepository extends UserRepository {
 
   private mapper = new UserMockRepositoryMapper();
 
-  users: UserMockEntity[] = [
+  users: UserEntity[] = [
     {
     "createdAt": "2022-08-09T22:02:00.842Z",
     "name": "Jody Murazik",
@@ -43,17 +43,17 @@ export class UserMockRepository extends UserRepository {
     super();
   }
 
-  getUserById(id: string): Observable<UserMockEntity> {
+  getUserById(id: string): Observable<UserModel> {
     return from(this.users)
     .pipe(filter(
-      (elephant: UserMockEntity | any): boolean => {
+      (elephant: UserEntity | any): boolean => {
         return elephant.id === id;
       })
     )
     .pipe(map(this.mapper.mapFrom));
   }
 
-  getAllUsers(): Observable<UserMockEntity> {
+  getAllUsers(): Observable<UserModel> {
     return from(this.users)
       .pipe(map(<any>this.mapper.mapFrom));
   }

@@ -3,7 +3,7 @@ import { inject, TestBed } from '@angular/core/testing';
 import { UserModel } from '@core/domain';
 import { UserRepository } from '@core/repositories';
 
-import { UserWebEntity, UserWebRepository } from '@repository/user-web-repository';
+import { UserWebEntity, UserWebRepository } from '@data/repository/user-web-repository';
 import { count, pipe, toArray } from 'rxjs';
 
 describe('UserWebRepositoryService', () => {

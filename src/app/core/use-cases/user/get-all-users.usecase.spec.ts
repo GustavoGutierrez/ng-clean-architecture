@@ -1,10 +1,9 @@
 import { inject, TestBed } from '@angular/core/testing';
 import { UserRepository } from '@core/repositories/user.repository';
-import { Store } from '@ngxs/store';
-import { UserMockRepository } from '@repository/user-mock-repository';
+import { UserMockRepository } from '@data/repository/user-mock-repository';
 import { StoreModule } from '@state/store.module';
 
-import { count } from 'rxjs';
+// import { count } from 'rxjs';
 import { GetAllUsersUsecase } from './get-all-users.usecase';
 
 describe('GetAllUsersUsecase', () => {

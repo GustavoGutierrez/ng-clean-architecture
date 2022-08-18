@@ -1,9 +1,9 @@
 import { UserModel } from '@core/domain/user.model';
 import { Mapper } from '@core/base/mapper';
-import { UserMockEntity } from '@repository/user-mock-repository';
+import { UserEntity } from '@core/entities/user.entity';
 
-export class UserMockRepositoryMapper extends Mapper <UserMockEntity, UserModel> {
-  mapFrom(param: UserMockEntity): UserModel {
+export class UserMockRepositoryMapper extends Mapper <UserEntity, UserModel> {
+  mapFrom(param: UserEntity): UserModel {
     return {
       id: param.id,
       name: param.name,
@@ -13,7 +13,7 @@ export class UserMockRepositoryMapper extends Mapper <UserMockEntity, UserModel>
     };
   }
 
-  mapTo(param: UserModel): UserMockEntity {
+  mapTo(param: UserEntity): UserModel  {
     return {
       id: param.id,
       name: param.name,

@@ -12,7 +12,9 @@ Clean architecture for Angular with state management pattern and best practices
 
 - Clean architecture on Android \
 https://speakerdeck.com/markomilos/clean-architecture-on-android?slide=9
-- Clean architecture in Frontend \
+- Angular Clean architecture \
+https://ferayguavives.medium.com/angular-clean-architecture-e4384650c19e
+- Clean architecture in Frontend (React/Redux/Typescript) \
 https://indiedev.medium.com/clean-architecture-in-frontend-react-redux-typescript-bd108ddd13f7
 
 

@@ -6,11 +6,10 @@ import { mergeMap, map } from 'rxjs/operators';
 import { environment } from '@environments/environment';
 import { UserRepository } from '@core/repositories/user.repository';
 import { UserModel } from '@core/domain/user.model';
-import { UserWebEntity, UserWebRepositoryMapper } from '@repository/user-web-repository';
+import { UserEntity } from '@core/entities/user.entity';
+import { UserWebRepositoryMapper } from './user-web-repository-mapper';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class UserWebRepository extends UserRepository {
 
   mapper = new UserWebRepositoryMapper();
@@ -24,15 +23,15 @@ export class UserWebRepository extends UserRepository {
 
   getUserById(id: string): Observable<UserModel> {
     return this.http
-      .get<UserWebEntity>(`${this.apiUrl}/users/${id}`)
+      .get<UserEntity>(`${this.apiUrl}/users/${id}`)
       .pipe(map(this.mapper.mapFrom));
   }
 
   getAllUsers(): Observable<UserModel> {
     return this.http
-      .get<UserWebEntity[]>(`${this.apiUrl}/users`)
+      .get<UserEntity[]>(`${this.apiUrl}/users`)
       .pipe(
-        mergeMap((users: UserWebEntity[]) => {
+        mergeMap((users: UserEntity[]) => {
           return users;
         }),
         map(this.mapper.mapFrom)

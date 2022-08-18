@@ -1,31 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AppComponent } from './app.component';
 import { CoreModule } from '@core/core.module';
-import { InfrastructureModule } from '@infrastructure/infrastructure.module';
+import { DataModule } from '@data/data.module';
 import { StoreModule } from 'src/app/store/store.module';
 import { PresentationModule } from '@presentation/presentation.module';
-import { UserRepository } from '@core/repositories/user.repository';
-import { UserMockRepository } from '@repository/user-mock-repository';
-import { UserWebRepository } from '@repository/user-web-repository';
 import { RouterModule } from '@angular/router';
+import { ShellLayoutComponent } from '@presentation/layout/shell-layout/shell-layout.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
   imports: [
     BrowserModule,
     RouterModule,
     CoreModule,
     StoreModule,
-    InfrastructureModule,
+    DataModule,
     PresentationModule
   ],
-  providers: [
-    {provide: UserRepository, useClass: UserWebRepository}
-    // {provide: UserRepository, useClass: UserMockRepository}
-  ],
-  bootstrap: [AppComponent]
+  bootstrap: [ShellLayoutComponent]
 })
 export class AppModule { }

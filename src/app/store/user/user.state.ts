@@ -57,56 +57,10 @@ export class UserState {
   }
 
   @Action(CleanUsersAction)
-  creanUsers({ getState, setState }: StateContext<UserStateModel>): void{
+  cleanUsers({ getState, setState }: StateContext<UserStateModel>): void{
     const state = getState();
     setState({ ...state, list: [] });
   }
-
-  // @Action(CreateUserAction)
-  // addUser({ getState, setState }: StateContext<UserStateModel>, { payload }: CreateUserAction): Observable<{ message?: string, data?: UserModel }> {
-  //   return this.userRepository.create(payload).pipe(
-  //     tap((response: { message: string, data: UserModel }) => {
-  //       const state = getState();
-  //       setState({ users: [...state.users, payload.data] });
-  //     })
-  //   );
-  // }
-
-  // @Action(UpdateUserAction)
-  // updateUser({ getState, setState }: StateContext<UserStateModel>, { payload }: UpdateUserAction): Observable<{ message: string, data: UserModel }> {
-  //   return this.userRepository.update(payload.id, payload).pipe(
-  //     tap((response: { message: string, data: UserModel }) => {
-  //       const state = getState();
-
-  //       if (state.users) {
-  //         const users: any = state.users;
-
-  //         const newState = users.filter((user: UserModel, index: number) => payload.id !== user.id);
-
-
-  //         setState({ ...state, users: [...newState, response.data] });
-  //       }
-
-  //     })
-  //   );
-  // }
-
-  // @Action(DeleteUserAction)
-  // deleteBook(
-  //   { getState, patchState }: StateContext<UserStateModel>,
-  //   { id }: DeleteUserAction
-  // ): Observable<void | { message: string }> {
-  //   return this.userRepository.delete(id).pipe(
-  //     tap((response: void | { message: string }) => {
-  //       const state = getState();
-  //       const users = state.users;
-
-  //       const newState = users?.filter((user: UserModel, index: number) => id !== user.id);
-
-  //       patchState({ ...state, users: [...newState] });
-  //     })
-  //   );
-  // }
 
   @Action(SelectUserAction)
   selectUser(
